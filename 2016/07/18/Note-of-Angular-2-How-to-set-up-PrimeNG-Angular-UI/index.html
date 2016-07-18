@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="angular 2,typescript," />
+  <meta name="keywords" content="angular 2,typescript,PirmeNG," />
 
 
 
@@ -57,39 +57,37 @@
 
 
 
-<meta name="description" content="title: ‘[Note of Angular 2] Compile to another folder’
-
-用typescript寫好程式之後，一但編譯之後，會多出許多XXX.js, XXX.map的檔案，會使得未來在尋找檔案上變得非常麻煩。所以可以使用以下的方法來將那些檔案編譯至特定資料夾。
+<meta name="description" content="title: ‘[Note of Angular 2] How to set up PrimeNG (Angular UI)’
 
 
-編輯systemjs.config.js檔案
+利用npm安裝PirmeNG的兩個套件
+ 1234npm install primeng --savenpm install primeui --save
 
-1234567var map = &amp;#123;">
+在index.html中載入CSS檔
+ 1234567&amp;lt;head&amp;gt;	&amp;lt;link rel=&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Note of Angular 2] 將js, map等檔案編譯至特定資料夾">
-<meta property="og:url" content="http://yoursite.com/2016/07/17/Note-of-Angular-2-Compile-to-another-folder/index.html">
+<meta property="og:title" content="[Note of Angular 2] UI的新選擇: PrimeNG使用說明">
+<meta property="og:url" content="http://yoursite.com/2016/07/18/Note-of-Angular-2-How-to-set-up-PrimeNG-Angular-UI/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="title: ‘[Note of Angular 2] Compile to another folder’
-
-用typescript寫好程式之後，一但編譯之後，會多出許多XXX.js, XXX.map的檔案，會使得未來在尋找檔案上變得非常麻煩。所以可以使用以下的方法來將那些檔案編譯至特定資料夾。
+<meta property="og:description" content="title: ‘[Note of Angular 2] How to set up PrimeNG (Angular UI)’
 
 
-編輯systemjs.config.js檔案
+利用npm安裝PirmeNG的兩個套件
+ 1234npm install primeng --savenpm install primeui --save
 
-1234567var map = &amp;#123;">
-<meta property="og:image" content="http://yoursite.com/images/angular2/ts-compile.jpg">
-<meta property="og:updated_time" content="2016-07-17T10:00:20.044Z">
+在index.html中載入CSS檔
+ 1234567&amp;lt;head&amp;gt;	&amp;lt;link rel=&amp;q">
+<meta property="og:updated_time" content="2016-07-18T04:20:50.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Note of Angular 2] 將js, map等檔案編譯至特定資料夾">
-<meta name="twitter:description" content="title: ‘[Note of Angular 2] Compile to another folder’
-
-用typescript寫好程式之後，一但編譯之後，會多出許多XXX.js, XXX.map的檔案，會使得未來在尋找檔案上變得非常麻煩。所以可以使用以下的方法來將那些檔案編譯至特定資料夾。
+<meta name="twitter:title" content="[Note of Angular 2] UI的新選擇: PrimeNG使用說明">
+<meta name="twitter:description" content="title: ‘[Note of Angular 2] How to set up PrimeNG (Angular UI)’
 
 
-編輯systemjs.config.js檔案
+利用npm安裝PirmeNG的兩個套件
+ 1234npm install primeng --savenpm install primeui --save
 
-1234567var map = &amp;#123;">
-<meta name="twitter:image" content="http://yoursite.com/images/angular2/ts-compile.jpg">
+在index.html中載入CSS檔
+ 1234567&amp;lt;head&amp;gt;	&amp;lt;link rel=&amp;q">
 
 
 
@@ -107,7 +105,7 @@
   };
 </script>
 
-  <title> [Note of Angular 2] 將js, map等檔案編譯至特定資料夾 | Ben's Log </title>
+  <title> [Note of Angular 2] UI的新選擇: PrimeNG使用說明 | Ben's Log </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -246,7 +244,7 @@
             
             
               
-                [Note of Angular 2] 將js, map等檔案編譯至特定資料夾
+                [Note of Angular 2] UI的新選擇: PrimeNG使用說明
               
             
           </h1>
@@ -258,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T17:41:00+08:00" content="2016-07-17">
-              2016-07-17
+            <time itemprop="dateCreated" datetime="2016-07-18T12:18:00+08:00" content="2016-07-18">
+              2016-07-18
             </time>
           </span>
 
@@ -304,17 +302,21 @@
       
 
       
-        <p>title: ‘[Note of Angular 2] Compile to another folder’</p>
+        <p>title: ‘[Note of Angular 2] How to set up PrimeNG (Angular UI)’</p>
 <hr>
-<p>用typescript寫好程式之後，一但編譯之後，會多出許多<code>XXX.js</code>, <code>XXX.map</code>的檔案，會使得未來在尋找檔案上變得非常麻煩。所以可以使用以下的方法來將那些檔案編譯至特定資料夾。</p>
-<p><img src="/images/angular2/ts-compile.jpg" alt="Image of Yaktocat"></p>
 <ol>
-<li>編輯<code>systemjs.config.js</code>檔案</li>
+<li><p>利用npm安裝PirmeNG的兩個套件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install primeng --save</span><br><span class="line"></span><br><span class="line">npm install primeui --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>index.html</code>中載入CSS檔</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;node_modules/primeui/themes/omega/theme.css&quot; /&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;app/resources/icons/css/font-awesome.min.css&quot; /&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;node_modules/primeui/primeui-ng-all.min.css&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>systemjs.config.js</code>更改map, packages</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// map tells the System loader where to look for things</span><br><span class="line">  var map = &#123;</span><br><span class="line">    &apos;app&apos;:                        &apos;app&apos;, // &apos;dist&apos;,</span><br><span class="line">    &apos;rxjs&apos;:                       &apos;node_modules/rxjs&apos;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &apos;node_modules/angular2-in-memory-web-api&apos;,</span><br><span class="line">    &apos;@angular&apos;:                   &apos;node_modules/@angular&apos;,</span><br><span class="line">    &apos;primeng&apos;:                    &apos;node_modules/primeng&apos;   //新增此行</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  // packages tells the System loader how to load when no filename and/or no extension</span><br><span class="line">  var packages = &#123;</span><br><span class="line">    &apos;app&apos;:                        &#123; main: &apos;boot.js&apos;,  defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;rxjs&apos;:                       &#123; defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &#123; defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;primeng&apos;:                    &#123; defaultExtension: &apos;js&apos; &#125;   //新增此行</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;</span><br><span class="line">    &apos;app&apos;:                        &apos;dist/app&apos;, // 更改此行,</span><br><span class="line"></span><br><span class="line">    &apos;@angular&apos;:                   &apos;node_modules/@angular&apos;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &apos;node_modules/angular2-in-memory-web-api&apos;,</span><br><span class="line">    &apos;rxjs&apos;:                       &apos;node_modules/rxjs&apos;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>2.<br>編輯<code>tsconfig.json</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &quot;target&quot;: &quot;es5&quot;,</span><br><span class="line">    &quot;module&quot;: &quot;commonjs&quot;,</span><br><span class="line">    &quot;moduleResolution&quot;: &quot;node&quot;,</span><br><span class="line">    &quot;sourceMap&quot;: true,</span><br><span class="line">    &quot;emitDecoratorMetadata&quot;: true,</span><br><span class="line">    &quot;experimentalDecorators&quot;: true,</span><br><span class="line">    &quot;removeComments&quot;: false,</span><br><span class="line">    &quot;noImplicitAny&quot;: true,</span><br><span class="line">    &quot;suppressImplicitAnyIndexErrors&quot;: true,</span><br><span class="line">    &quot;outDir&quot;: &quot;dist&quot; //新增此行</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>把原本<code>/app</code>內的js, map等檔案刪除，重新<code>npm tsc</code>編譯一次就會發現那些檔案都移動到<code>/dist/app</code>資料夾內了。</p>
+<p>使用方法，在ts檔內import所需的extension，並且加入到directives中，詳細說明請參考官方文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Component&#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123;InputText&#125; from &apos;primeng/primeng&apos;;  //import所需的extension</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: &apos;my-app&apos;,</span><br><span class="line">	template: `</span><br><span class="line">        &lt;h1&gt;My First PrimeNG App&lt;/h1&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; pInputText/&gt;</span><br><span class="line">    `,</span><br><span class="line">    directives: [InputText]  //加入到directives中</span><br><span class="line">&#125;)</span><br><span class="line">export class AppComponent &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>參考:<br><a href="http://www.primefaces.org/primeng/#/setup" target="_blank" rel="external">PrimeNG Setup</a></p>
 
       
     </div>
@@ -333,6 +335,8 @@
           
             <a href="/tags/typescript/" rel="tag">#typescript</a>
           
+            <a href="/tags/PirmeNG/" rel="tag">#PirmeNG</a>
+          
         </div>
       
 
@@ -340,17 +344,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/17/Note-of-Angular-2-Getting-start/" rel="next" title="[Note of Angular 2] Getting start">
-                <i class="fa fa-chevron-left"></i> [Note of Angular 2] Getting start
+              <a href="/2016/07/17/Note-of-Angular-2-Compile-to-another-folder/" rel="next" title="[Note of Angular 2] 將js, map等檔案編譯至特定資料夾">
+                <i class="fa fa-chevron-left"></i> [Note of Angular 2] 將js, map等檔案編譯至特定資料夾
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/18/Note-of-Angular-2-How-to-set-up-PrimeNG-Angular-UI/" rel="prev" title="[Note of Angular 2] UI的新選擇: PrimeNG使用說明">
-                [Note of Angular 2] UI的新選擇: PrimeNG使用說明 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

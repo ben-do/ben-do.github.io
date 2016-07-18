@@ -225,6 +225,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/18/Note-of-Angular-2-How-to-set-up-PrimeNG-Angular-UI/" itemprop="url">
+                  [Note of Angular 2] UI的新選擇: PrimeNG使用說明
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T12:18:00+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/angular-2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular 2</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: ‘[Note of Angular 2] How to set up PrimeNG (Angular UI)’</p>
+<hr>
+<ol>
+<li><p>利用npm安裝PirmeNG的兩個套件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install primeng --save</span><br><span class="line"></span><br><span class="line">npm install primeui --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>index.html</code>中載入CSS檔</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;node_modules/primeui/themes/omega/theme.css&quot; /&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;app/resources/icons/css/font-awesome.min.css&quot; /&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;node_modules/primeui/primeui-ng-all.min.css&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>systemjs.config.js</code>更改map, packages</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// map tells the System loader where to look for things</span><br><span class="line">  var map = &#123;</span><br><span class="line">    &apos;app&apos;:                        &apos;app&apos;, // &apos;dist&apos;,</span><br><span class="line">    &apos;rxjs&apos;:                       &apos;node_modules/rxjs&apos;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &apos;node_modules/angular2-in-memory-web-api&apos;,</span><br><span class="line">    &apos;@angular&apos;:                   &apos;node_modules/@angular&apos;,</span><br><span class="line">    &apos;primeng&apos;:                    &apos;node_modules/primeng&apos;   //新增此行</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  // packages tells the System loader how to load when no filename and/or no extension</span><br><span class="line">  var packages = &#123;</span><br><span class="line">    &apos;app&apos;:                        &#123; main: &apos;boot.js&apos;,  defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;rxjs&apos;:                       &#123; defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &#123; defaultExtension: &apos;js&apos; &#125;,</span><br><span class="line">    &apos;primeng&apos;:                    &#123; defaultExtension: &apos;js&apos; &#125;   //新增此行</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用方法，在ts檔內import所需的extension，並且加入到directives中，詳細說明請參考官方文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Component&#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123;InputText&#125; from &apos;primeng/primeng&apos;;  //import所需的extension</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">	selector: &apos;my-app&apos;,</span><br><span class="line">	template: `</span><br><span class="line">        &lt;h1&gt;My First PrimeNG App&lt;/h1&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; pInputText/&gt;</span><br><span class="line">    `,</span><br><span class="line">    directives: [InputText]  //加入到directives中</span><br><span class="line">&#125;)</span><br><span class="line">export class AppComponent &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>參考:<br><a href="http://www.primefaces.org/primeng/#/setup" target="_blank" rel="external">PrimeNG Setup</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/17/Note-of-Angular-2-Compile-to-another-folder/" itemprop="url">
                   [Note of Angular 2] 將js, map等檔案編譯至特定資料夾
                 </a>
@@ -923,7 +1045,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -931,7 +1053,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分類</span>
               
             </div>
@@ -940,7 +1062,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
