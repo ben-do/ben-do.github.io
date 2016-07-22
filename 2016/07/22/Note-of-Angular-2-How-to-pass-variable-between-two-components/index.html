@@ -70,7 +70,7 @@
 情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
 檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
 <meta property="og:image" content="http://ben-do.github.io/images/angular2/ABcomponent.png">
-<meta property="og:updated_time" content="2016-07-22T09:37:14.961Z">
+<meta property="og:updated_time" content="2016-07-22T09:55:08.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
 <meta name="twitter:description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
@@ -85,7 +85,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -304,7 +304,10 @@
 </ul>
 <ol>
 <li><p>在<code>AComponent.ts</code>的class中先宣告<code>myVar</code></p>
- <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">export</span> <span class="keyword">class</span> AComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">    	myVar: <span class="built_in">number</span>;</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="string">``</span><span class="string">`	</span><br><span class="line">2. 在`</span>AComponent.html<span class="string">`傳入變數</span><br><span class="line"></span><br><span class="line">	`</span><span class="string">``</span>html</span><br><span class="line">    &lt;B-selector [myVar]=<span class="string">"myVar"</span>&gt;&lt;<span class="regexp">/B-selector&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export class AComponent implements OnInit &#123;</span><br><span class="line">   	myVar: number;</span><br><span class="line">       ...</span><br><span class="line">       ...</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>AComponent.html</code>傳入變數</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;B-selector [myVar]=&quot;myVar&quot;&gt;&lt;/B-selector&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>BComponent.ts</code>中 import <code>Input</code>功能，並宣告變數，變數前面需要加上<code>@Input()</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	@Input() myVar: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -320,7 +323,10 @@
 <h4 id="情境-II"><a href="#情境-II" class="headerlink" title="情境 II:"></a>情境 II:</h4><p>接續上例，在B Component更動過該變數之後，想要讓A Component同時也發生變化。</p>
 <ol>
 <li><p>在<code>AComponent.ts</code>的class中先宣告一個函數來處理B component更動到<code>myVar</code>的事件</p>
- <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">export</span> <span class="keyword">class</span> AComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">    	myVar: <span class="built_in">any</span>;</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">        onChangeVar(variable: <span class="built_in">number</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.myVar = variable;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="string">``</span><span class="string">`	</span><br><span class="line">2. 在`</span>AComponent.html<span class="string">`中bind該事件</span><br><span class="line"></span><br><span class="line">	`</span><span class="string">``</span>html</span><br><span class="line">    &lt;B-selector [myVar]=<span class="string">"myVar"</span> (onChangeVar)=<span class="string">"onChangeVar($event)"</span>&gt;&lt;<span class="regexp">/B-selector&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">   	myVar: <span class="built_in">any</span>;</span><br><span class="line">       ...</span><br><span class="line">       ...</span><br><span class="line">       onChangeVar(variable: <span class="built_in">number</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.myVar = variable;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>AComponent.html</code>中bind該事件</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">B-selector</span> [<span class="attr">myVar</span>]=<span class="string">"myVar"</span> (<span class="attr">onChangeVar</span>)=<span class="string">"onChangeVar($event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">B-selector</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>BComponent.ts</code>中 import <code>Output</code>、<code>EventEmitter</code>功能，並宣告在<code>1</code>提到的函數，變數前面需要加上<code>@Output()</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	...</span><br><span class="line">	@Output() onChangeVar = new EventEmitter();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -343,8 +349,6 @@
 <li><p>在<code>BComponent.html</code>中顯示<code>counter</code>這變數</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> in B Component</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
 <li><p>現在要在<code>AComponent.html</code>中使用<code>add()</code>與<code>minus()</code>來操作<code>counter</code>，首先要在<code>&lt;B-selector&gt;</code>中加入一個<code>#</code>開頭的參考變數。</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;B-selector #myCounter&gt;&lt;/B-selector&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -473,7 +477,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
