@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ben-do.github.io/2016/07/22/Note-of-Angular-2-How-to-pass-variable-between-two-components/</loc>
+    
+    <lastmod>2016-07-22T08:11:24.175Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ben-do.github.io/2016/07/21/Git-basic-usage/</loc>
+    
+    <lastmod>2016-07-21T03:33:38.355Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ben-do.github.io/2016/07/21/Turn-String-Into-Int-with-Typescript/</loc>
+    
+    <lastmod>2016-07-21T03:32:50.798Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ben-do.github.io/2016/07/18/Note-of-Angular-2-Using-Lovefield-in-Angular-2/</loc>
     
     <lastmod>2016-07-18T14:34:37.749Z</lastmod>

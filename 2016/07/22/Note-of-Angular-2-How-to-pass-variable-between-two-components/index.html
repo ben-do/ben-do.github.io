@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="angular 2,typescript," />
 
 
 
@@ -57,19 +57,25 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+
+情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
+檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://ben-do.github.io/2016/03/17/hello-world/index.html">
+<meta property="og:title" content="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
+<meta property="og:url" content="http://ben-do.github.io/2016/07/22/Note-of-Angular-2-How-to-pass-variable-between-two-components/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-17T14:41:19.000Z">
+<meta property="og:description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+
+情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
+檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
+<meta property="og:updated_time" content="2016-07-22T08:11:24.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
+<meta name="twitter:description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+
+情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
+檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
 
 
 
@@ -87,7 +93,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | Ben's Log </title>
+  <title> [Note of Angular 2] 如何讓變數在兩個components傳遞? | Ben's Log </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -226,7 +232,7 @@ Quick">
             
             
               
-                Hello World
+                [Note of Angular 2] 如何讓變數在兩個components傳遞?
               
             
           </h1>
@@ -238,11 +244,30 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T22:41:51+08:00" content="2016-03-17">
-              2016-03-17
+            <time itemprop="dateCreated" datetime="2016-07-22T16:10:00+08:00" content="2016-07-22">
+              2016-07-22
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/angular-2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular 2</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -265,15 +290,44 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>title: ‘[Note of Angular 2] How to pass variable between two components’</p>
+<hr>
+<h4 id="情境-I"><a href="#情境-I" class="headerlink" title="情境 I:"></a>情境 I:</h4><p>有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。</p>
+<p>檔案分別有以下四個，其對應到的selector分為別<code>&lt;A-selector&gt;</code>與<code>&lt;B-selector&gt;</code>，要傳的變數為<code>myVar</code></p>
+<ul>
+<li>AComponent.ts</li>
+<li>AComponent.html</li>
+<li>BComponent.ts</li>
+<li>BComponent.html</li>
+</ul>
+<ol>
+<li><p>在<code>AComponent.ts</code>的class中先宣告<code>myVar</code></p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">export</span> <span class="keyword">class</span> DynamicFormComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">    	myVar: <span class="built_in">number</span>;</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="string">``</span><span class="string">`	</span><br><span class="line">2. 在`</span>AComponent.html<span class="string">`傳入變數</span><br><span class="line"></span><br><span class="line">	`</span><span class="string">``</span>html</span><br><span class="line">    &lt;B-selector [myVar]=<span class="string">"myVar"</span>&gt;&lt;<span class="regexp">/B-selector&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>BComponent.ts</code>中 import <code>Input</code>功能，並宣告變數，變數前面需要加上<code>@Input()</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	@Input() myVar: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接著就可以在B Component中使用該變數了</p>
+</li>
+</ol>
+<hr>
+<h4 id="情境-II"><a href="#情境-II" class="headerlink" title="情境 II:"></a>情境 II:</h4><p>接續上例，在B Component更動過該變數之後，想要讓A Component同時也發生變化。</p>
+<ol>
+<li><p>在<code>AComponent.ts</code>的class中先宣告一個函數來處理B component更動到<code>myVar</code>的事件</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">export</span> <span class="keyword">class</span> DynamicFormComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">    	myVar: <span class="built_in">any</span>;</span><br><span class="line">        ...</span><br><span class="line">        ...</span><br><span class="line">        onChangeVar(variable: <span class="built_in">number</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.myVar = variable;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="string">``</span><span class="string">`	</span><br><span class="line">2. 在`</span>AComponent.html<span class="string">`中bind該事件</span><br><span class="line"></span><br><span class="line">	`</span><span class="string">``</span>html</span><br><span class="line">    &lt;B-selector [myVar]=<span class="string">"myVar"</span> (onChangeVar)=<span class="string">"onChangeVar($event)"</span>&gt;&lt;<span class="regexp">/B-selector&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>BComponent.ts</code>中 import <code>Output</code>、<code>EventEmitter</code>功能，並宣告在<code>1</code>提到的函數，變數前面需要加上<code>@Output()</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	...</span><br><span class="line">	@Output() onChangeVar = new EventEmitter();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接著就可以在B Component中使用該函數來傳回更新過後的值</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.onChangeVar.emit(newVar);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>參考</p>
+<ol>
+<li><a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#parent-to-child" target="_blank" rel="external">Pass data from parent to child with input binding</a></li>
+<li><a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#child-to-parent" target="_blank" rel="external">Parent listens for child event</a></li>
+</ol>
 
       
     </div>
@@ -286,18 +340,26 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/angular-2/" rel="tag">#angular 2</a>
+          
+            <a href="/tags/typescript/" rel="tag">#typescript</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/21/Turn-String-Into-Int-with-Typescript/" rel="next" title="在typesript中將string轉為int">
+                <i class="fa fa-chevron-left"></i> 在typesript中將string轉為int
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/18/Case-Study-of-Machine-Learning-I-Setup-Environment/" rel="prev" title="機器學習個案研究I-環境設定">
-                機器學習個案研究I-環境設定 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -416,7 +478,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#情境-I"><span class="nav-number">1.</span> <span class="nav-text">情境 I:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情境-II"><span class="nav-number">2.</span> <span class="nav-text">情境 II:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
