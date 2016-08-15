@@ -235,6 +235,131 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/15/how-to-import-and-export-data-in-lovefield/" itemprop="url">
+                  Lovefield 的資料匯出與匯入
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-08-15T23:25:00+08:00" content="2016-08-15">
+              2016-08-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/angular2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular2</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: how-to-import-and-export-data-in-lovefield<br>tags:</p>
+<hr>
+<p>會使用到<code>lovefield</code>來開發程式，應該蠻有機會有需要用到匯出(<code>export</code>)與匯入(<code>import</code>)這兩個功能的，今天來介紹一下。</p>
+<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p>lovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個javascript的object。格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &lt;資料庫名稱&gt;,</span><br><span class="line">  &quot;version&quot;: &lt;資料庫版本&gt;,</span><br><span class="line">  &quot;tables&quot;: &#123;</span><br><span class="line">    &lt;資料表名稱&gt;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &lt;欄位1&gt;: &lt;欄位內容&gt;,</span><br><span class="line">        &lt;欄位2&gt;: &lt;欄位內容&gt;,</span><br><span class="line">        ...</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123; ... &#125;,</span><br><span class="line">      ...</span><br><span class="line">    ],</span><br><span class="line">    &lt;資料表名稱&gt;: [ ... ],</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方式</p>
+<p>在自己寫的service<code>lf.service.ts</code>中加入一個新的function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exportDB() &#123;</span><br><span class="line">    var exportedDb = this.myDb.export();</span><br><span class="line">    return exportedDb;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="同場加映：如何將匯出的資料存成檔案？"><a href="#同場加映：如何將匯出的資料存成檔案？" class="headerlink" title="同場加映：如何將匯出的資料存成檔案？"></a>同場加映：如何將匯出的資料存成檔案？</h3><p>我們要利用網址來將資料存為檔案，首先需要先import <code>DomSanitizationService</code>這個功能。<br>再來需要將<code>href</code>,<code>file_name</code>這兩個屬性做bind，所以先宣告,<br>最後寫一個function來call上面所寫好的service的export function。當使用者點選<code>匯出資料庫</code>之後，再點選<code>下載</code>連結就可以將資料庫存為檔案。<br><img src="/images/angular2/export_db.png" alt="匯出資料庫示範圖"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">import &#123; DomSanitizationService &#125; from &apos;@angular/platform-browser&apos;;</span><br><span class="line">import &#123; LFService &#125; from &apos;./lf.service&apos;;</span><br><span class="line"></span><br><span class="line">export class SettingComponent implements OnInit &#123;</span><br><span class="line">	href: any;</span><br><span class="line">    download_text: string = &quot;請先點選『匯出資料庫』&quot;;</span><br><span class="line">    file_name: string;</span><br><span class="line">    import_data: string;</span><br><span class="line"></span><br><span class="line">	constructor(private _lfService: LFService, private _sanitizer: DomSanitizationService) &#123;</span><br><span class="line">	</span><br><span class="line">	    &#125;</span><br><span class="line">	exportDb() &#123;</span><br><span class="line">	    this._lfService.exportDB().then((result: any) =&gt; &#123;</span><br><span class="line">	        // console.log(result);</span><br><span class="line">	        var url = &apos;data:text/json;charset=utf8,&apos; + encodeURIComponent(JSON.stringify(result));</span><br><span class="line">	        this.href = this._sanitizer.bypassSecurityTrustUrl(url);</span><br><span class="line">	        this.download_text = &quot;按右鍵『另存連結為...』&quot;;</span><br><span class="line">	        this.file_name = &quot;my_db_backup&quot;;</span><br><span class="line">	</span><br><span class="line">	    &#125;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>該頁面的html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;button&quot; (click)=&quot;exportDb()&quot; pButton label=&quot;匯出資料庫&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;a [href]=&quot;href&quot; [download]=&quot;file_name&quot; target=&quot;_blank&quot;&gt;下載&lt;/a&gt;&lt;span&gt;   (&#123;&#123;download_text&#125;&#125;)&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>import部分需要先將原本資料庫的內容全部清空後(不是把整個資料庫砍掉)，才可以進行匯入的動作。注意，匯入的資料的資料庫名稱與版本必須與原本的一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &lt;資料庫名稱&gt;,</span><br><span class="line">  &quot;version&quot;: &lt;資料庫版本&gt;,</span><br><span class="line">  &quot;tables&quot;: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>匯入的不可以是字串<code>string</code>，必須是json的物件，所以要利用<code>JSON.parse(data)</code>來轉換(假設你的data原本是string)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">    return this.myDb.import(JSON.parse(data)).then(function () &#123;</span><br><span class="line">        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="同場加映：如何匯入date-time類別的資料？"><a href="#同場加映：如何匯入date-time類別的資料？" class="headerlink" title="同場加映：如何匯入date_time類別的資料？"></a>同場加映：如何匯入date_time類別的資料？</h3><p> 有一點需要注意，那就是如果資料表的欄位有時間日期<code>lf.Type.DATE_TIME</code>的類別，則需要先行處理，不然會產生<code>value.getTime()</code>的error。本例參考<a href="http://stackoverflow.com/questions/4511705/how-to-parse-json-to-receive-a-date-object-in-javascript" target="_blank" rel="external">stackoverflow</a>改寫了一個<code>dateTimeReviver</code>，來處理<code>yyyy-MM-ddTHH:ii:ss.fffZ</code>的格式(ex: <code>2016-07-27T15:42:22.554Z</code>)。把這個Reviver當做JSON.parse()的第二個參數即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">importDb(data: string) &#123;</span><br><span class="line"></span><br><span class="line">    var dateTimeReviver = function (key: any, value: any) &#123;</span><br><span class="line">        var a: any;</span><br><span class="line">        if (typeof value === &apos;string&apos;) &#123;</span><br><span class="line">            a = /^(\d&#123;4&#125;)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)(.\d&#123;3&#125;Z)/.exec(value);</span><br><span class="line">            if (a) &#123;</span><br><span class="line">                return new Date(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">    this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">	    return this.myDb.import(JSON.parse(data, dateTimeReviver)).then(function () &#123;</span><br><span class="line">	        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/22/Note-of-Angular-2-How-to-pass-variable-between-two-components/" itemprop="url">
                   [Note of Angular 2] 如何讓變數在兩個components傳遞?
                 </a>
@@ -1275,113 +1400,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/18/Case-Study-of-Machine-Learning-I-Setup-Environment/" itemprop="url">
-                  機器學習個案研究I-環境設定
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T12:42:00+08:00" content="2016-03-18">
-              2016-03-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>本系列文章主要為記錄<code>Coursera</code>上的<code>Machine Learning Foundations: A Case Study Approach</code>，主要分為理論與實作兩個部分。實作的部分，使用的語言為<code>Python</code>。課程分為六周，我會盡量紀錄並補充相關資訊。</p>
-<h1 id="環境設定"><a href="#環境設定" class="headerlink" title="環境設定"></a>環境設定</h1><p>本系列課程主要需要使用到的套件為<code>GraphLab Create</code>，有一年的免費授權可以使用，若為教育用途，則每年可免費更新授權。使用的開發工具為<code>IPyhon Notebook</code>。</p>
-<h2 id="取得GraphLab-Create授權"><a href="#取得GraphLab-Create授權" class="headerlink" title="取得GraphLab Create授權"></a>取得GraphLab Create授權</h2><p>GraphLab Create為Dato公司的一項產品，非常方便的使用Python來進行Machine Learning。</p>
-<p>首先，先到<a href="https://dato.com/download/academic.html" target="_blank" rel="external">官網</a>進行註冊，<br><img src="/images/ml/w1/regist.jpg" alt="註冊頁面"></p>
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>註冊完之後會取得自己的Product Key，註冊之後可以取得下載連結。<br>基本上有三種方式可以安裝<code>GraphLab Create</code></p>
-<ol>
-<li>Dato Luancher</li>
-<li>Anaconda Python Environment</li>
-<li>virtualenv Python Environment</li>
-</ol>
-<p>大家平常可能比較常使用virtualenv來建立python的環境，但為了簡單方便起見，我使用Dato Luancher這個整合安裝包來進行。(如果你是使用Linux的環境只有2, 3可以選了)</p>
-<p>安裝好之後，輸入剛剛註冊的Email與Key，就會帶到以下畫面。點選右方<code>IPYTHON NOTEBOOK</code>按鈕就會在瀏覽器打開IPython notebook的頁面。<br><img src="/images/ml/w1/dato.jpg" alt="Data Luancher"></p>
-<h2 id="IPython-notebook"><a href="#IPython-notebook" class="headerlink" title="IPython notebook"></a>IPython notebook</h2><p>Python的基本語法在此就不多提了，注意一下IPython是由一個一個的cell所組成的，cell有分<code>code</code>, <code>markdown</code>等，可以在上面的選單列進行調整。要執行<code>code cell</code>內的python程式碼，就按下<code>Shift</code> + <code>Enter</code>即可。</p>
-<p>基本python語法複習看<a href="/images/ml/w1/Getting-started-with-iPython-Notebook.ipynb">這裡</a>，把這個檔案移到IPython的home資料夾就打開它就可以了。</p>
-<h2 id="GraphLab-Create"><a href="#GraphLab-Create" class="headerlink" title="GraphLab Create"></a>GraphLab Create</h2><p>把以下兩個檔案放到Home底下的資料夾，可以自行建立一個Machine Learning的資料夾來管理自己的資料夾。</p>
-<p>下載範例資料<a href="/images/ml/w1/people-example.csv">people-example.csv</a></p>
-<p>下載notebook檔<a href="/images/ml/w1/W1-GraphLab-SFrame.ipynb">W1-GraphLab-SFrame.ipynb</a></p>
-<p>ipynb這個檔案源自於該堂課程，我加入了部分的中文註解，方便大家了解。建議自行開啟一個新的notebook來練習。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1427,7 +1445,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1435,7 +1453,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
             </div>
@@ -1444,7 +1462,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>

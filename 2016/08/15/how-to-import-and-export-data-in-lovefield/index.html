@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="machine learning," />
+  <meta name="keywords" content="lovefield,angular2," />
 
 
 
@@ -57,19 +57,27 @@
 
 
 
-<meta name="description" content="簡介第二週的課程，正式進入到個案的部分。本次要探討的主題是如何預測房價？相信這是很多人都想要知道的一件事情，尤其在買賣房屋的時候。假設我們是買方，我們會想要知道這間房子大概值多少錢？它有三層樓，坪數是一百二十坪，有三間浴室，附有兩個停車位。
-我們使用到一個很基本的分析方法，回歸方程式。一條回歸方程式分為兩個部份：自變數(independed variable)與應變數(dependend vari">
+<meta name="description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+
+會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
 <meta property="og:type" content="article">
-<meta property="og:title" content="機器學習個案研究II-以回歸方程預測房價">
-<meta property="og:url" content="http://ben-do.github.io/2016/03/24/Case-Study-of-Machine-Learning-II-Simple-Regression/index.html">
+<meta property="og:title" content="Lovefield 的資料匯出與匯入">
+<meta property="og:url" content="http://ben-do.github.io/2016/08/15/how-to-import-and-export-data-in-lovefield/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="簡介第二週的課程，正式進入到個案的部分。本次要探討的主題是如何預測房價？相信這是很多人都想要知道的一件事情，尤其在買賣房屋的時候。假設我們是買方，我們會想要知道這間房子大概值多少錢？它有三層樓，坪數是一百二十坪，有三間浴室，附有兩個停車位。
-我們使用到一個很基本的分析方法，回歸方程式。一條回歸方程式分為兩個部份：自變數(independed variable)與應變數(dependend vari">
-<meta property="og:updated_time" content="2016-07-22T10:29:00.053Z">
+<meta property="og:description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+
+會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
+<meta property="og:image" content="http://ben-do.github.io/images/angular2/export_db.png">
+<meta property="og:updated_time" content="2016-08-15T15:27:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="機器學習個案研究II-以回歸方程預測房價">
-<meta name="twitter:description" content="簡介第二週的課程，正式進入到個案的部分。本次要探討的主題是如何預測房價？相信這是很多人都想要知道的一件事情，尤其在買賣房屋的時候。假設我們是買方，我們會想要知道這間房子大概值多少錢？它有三層樓，坪數是一百二十坪，有三間浴室，附有兩個停車位。
-我們使用到一個很基本的分析方法，回歸方程式。一條回歸方程式分為兩個部份：自變數(independed variable)與應變數(dependend vari">
+<meta name="twitter:title" content="Lovefield 的資料匯出與匯入">
+<meta name="twitter:description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+
+會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
+<meta name="twitter:image" content="http://ben-do.github.io/images/angular2/export_db.png">
 
 
 
@@ -87,7 +95,7 @@
   };
 </script>
 
-  <title> 機器學習個案研究II-以回歸方程預測房價 | Ben's Log </title>
+  <title> Lovefield 的資料匯出與匯入 | Ben's Log </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -236,7 +244,7 @@
             
             
               
-                機器學習個案研究II-以回歸方程預測房價
+                Lovefield 的資料匯出與匯入
               
             
           </h1>
@@ -248,8 +256,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-03-24T01:33:00+08:00" content="2016-03-24">
-              2016-03-24
+            <time itemprop="dateCreated" datetime="2016-08-15T23:25:00+08:00" content="2016-08-15">
+              2016-08-15
             </time>
           </span>
 
@@ -262,8 +270,8 @@
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
-                    <span itemprop="name">machine learning</span>
+                  <a href="/categories/angular2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular2</span>
                   </a>
                 </span>
 
@@ -294,11 +302,24 @@
       
 
       
-        <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>第二週的課程，正式進入到個案的部分。本次要探討的主題是如何預測房價？相信這是很多人都想要知道的一件事情，尤其在買賣房屋的時候。假設我們是買方，我們會想要知道這間房子大概值多少錢？它有三層樓，坪數是一百二十坪，有三間浴室，附有兩個停車位。</p>
-<p>我們使用到一個很基本的分析方法，回歸方程式。一條回歸方程式分為兩個部份：<code>自變數</code>(independed variable)與<code>應變數</code>(dependend variable)。顧名思義，<code>自變數</code>就是可以我們自己來改變它的值的數字，像是每間房子的大小、浴室數量等，這些我們也把它稱為屬性。而<code>應變數</code>指的就是會隨著自變數而跟著改變的數值，像是房子的價格會隨著坪數的大小而改變。</p>
-<p>而透過回歸的方式就是希望可以找到一條方程式，把<code>自變數</code>的值(房子的屬性)丟進去之後，就可以得到<code>應變數</code>(價錢)是多少。</p>
-<p>有了這最基本的認知之後，就可以開始使用python去做分析與預測了(詳細關於回歸方程式的介紹我在此就先不多說，有興趣可以自行翻閱相關資料，或是我有空再補充)。</p>
-<p>＃程式實作<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> graphlab</span><br><span class="line"><span class="comment"># 載入房地產的資料</span></span><br><span class="line">sales = graphlab.SFrame(<span class="string">'home_data.gl/'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接查看一下匯入的資料，共有21613筆資料，每筆資料有21個欄位</span></span><br><span class="line">sales</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將canvas的顯示目標設定在ipython notebook內</span></span><br><span class="line">graphlab.canvas.set_target(<span class="string">'ipynb'</span>) </span><br><span class="line">sales.show(view=<span class="string">"Scatter Plot"</span>, x=<span class="string">"sqft_living"</span>, y=<span class="string">"price"</span>)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+        <p>title: how-to-import-and-export-data-in-lovefield<br>tags:</p>
+<hr>
+<p>會使用到<code>lovefield</code>來開發程式，應該蠻有機會有需要用到匯出(<code>export</code>)與匯入(<code>import</code>)這兩個功能的，今天來介紹一下。</p>
+<h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p>lovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個javascript的object。格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &lt;資料庫名稱&gt;,</span><br><span class="line">  &quot;version&quot;: &lt;資料庫版本&gt;,</span><br><span class="line">  &quot;tables&quot;: &#123;</span><br><span class="line">    &lt;資料表名稱&gt;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &lt;欄位1&gt;: &lt;欄位內容&gt;,</span><br><span class="line">        &lt;欄位2&gt;: &lt;欄位內容&gt;,</span><br><span class="line">        ...</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123; ... &#125;,</span><br><span class="line">      ...</span><br><span class="line">    ],</span><br><span class="line">    &lt;資料表名稱&gt;: [ ... ],</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方式</p>
+<p>在自己寫的service<code>lf.service.ts</code>中加入一個新的function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exportDB() &#123;</span><br><span class="line">    var exportedDb = this.myDb.export();</span><br><span class="line">    return exportedDb;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="同場加映：如何將匯出的資料存成檔案？"><a href="#同場加映：如何將匯出的資料存成檔案？" class="headerlink" title="同場加映：如何將匯出的資料存成檔案？"></a>同場加映：如何將匯出的資料存成檔案？</h3><p>我們要利用網址來將資料存為檔案，首先需要先import <code>DomSanitizationService</code>這個功能。<br>再來需要將<code>href</code>,<code>file_name</code>這兩個屬性做bind，所以先宣告,<br>最後寫一個function來call上面所寫好的service的export function。當使用者點選<code>匯出資料庫</code>之後，再點選<code>下載</code>連結就可以將資料庫存為檔案。<br><img src="/images/angular2/export_db.png" alt="匯出資料庫示範圖"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">import &#123; DomSanitizationService &#125; from &apos;@angular/platform-browser&apos;;</span><br><span class="line">import &#123; LFService &#125; from &apos;./lf.service&apos;;</span><br><span class="line"></span><br><span class="line">export class SettingComponent implements OnInit &#123;</span><br><span class="line">	href: any;</span><br><span class="line">    download_text: string = &quot;請先點選『匯出資料庫』&quot;;</span><br><span class="line">    file_name: string;</span><br><span class="line">    import_data: string;</span><br><span class="line"></span><br><span class="line">	constructor(private _lfService: LFService, private _sanitizer: DomSanitizationService) &#123;</span><br><span class="line">	</span><br><span class="line">	    &#125;</span><br><span class="line">	exportDb() &#123;</span><br><span class="line">	    this._lfService.exportDB().then((result: any) =&gt; &#123;</span><br><span class="line">	        // console.log(result);</span><br><span class="line">	        var url = &apos;data:text/json;charset=utf8,&apos; + encodeURIComponent(JSON.stringify(result));</span><br><span class="line">	        this.href = this._sanitizer.bypassSecurityTrustUrl(url);</span><br><span class="line">	        this.download_text = &quot;按右鍵『另存連結為...』&quot;;</span><br><span class="line">	        this.file_name = &quot;my_db_backup&quot;;</span><br><span class="line">	</span><br><span class="line">	    &#125;);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>該頁面的html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;button&quot; (click)=&quot;exportDb()&quot; pButton label=&quot;匯出資料庫&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;a [href]=&quot;href&quot; [download]=&quot;file_name&quot; target=&quot;_blank&quot;&gt;下載&lt;/a&gt;&lt;span&gt;   (&#123;&#123;download_text&#125;&#125;)&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>import部分需要先將原本資料庫的內容全部清空後(不是把整個資料庫砍掉)，才可以進行匯入的動作。注意，匯入的資料的資料庫名稱與版本必須與原本的一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &lt;資料庫名稱&gt;,</span><br><span class="line">  &quot;version&quot;: &lt;資料庫版本&gt;,</span><br><span class="line">  &quot;tables&quot;: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>匯入的不可以是字串<code>string</code>，必須是json的物件，所以要利用<code>JSON.parse(data)</code>來轉換(假設你的data原本是string)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">    return this.myDb.import(JSON.parse(data)).then(function () &#123;</span><br><span class="line">        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="同場加映：如何匯入date-time類別的資料？"><a href="#同場加映：如何匯入date-time類別的資料？" class="headerlink" title="同場加映：如何匯入date_time類別的資料？"></a>同場加映：如何匯入date_time類別的資料？</h3><p> 有一點需要注意，那就是如果資料表的欄位有時間日期<code>lf.Type.DATE_TIME</code>的類別，則需要先行處理，不然會產生<code>value.getTime()</code>的error。本例參考<a href="http://stackoverflow.com/questions/4511705/how-to-parse-json-to-receive-a-date-object-in-javascript" target="_blank" rel="external">stackoverflow</a>改寫了一個<code>dateTimeReviver</code>，來處理<code>yyyy-MM-ddTHH:ii:ss.fffZ</code>的格式(ex: <code>2016-07-27T15:42:22.554Z</code>)。把這個Reviver當做JSON.parse()的第二個參數即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">importDb(data: string) &#123;</span><br><span class="line"></span><br><span class="line">    var dateTimeReviver = function (key: any, value: any) &#123;</span><br><span class="line">        var a: any;</span><br><span class="line">        if (typeof value === &apos;string&apos;) &#123;</span><br><span class="line">            a = /^(\d&#123;4&#125;)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)(.\d&#123;3&#125;Z)/.exec(value);</span><br><span class="line">            if (a) &#123;</span><br><span class="line">                return new Date(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">    this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">	    return this.myDb.import(JSON.parse(data, dateTimeReviver)).then(function () &#123;</span><br><span class="line">	        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -313,7 +334,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/machine-learning/" rel="tag">#machine learning</a>
+            <a href="/tags/lovefield/" rel="tag">#lovefield</a>
+          
+            <a href="/tags/angular2/" rel="tag">#angular2</a>
           
         </div>
       
@@ -322,17 +345,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/18/Case-Study-of-Machine-Learning-I-Setup-Environment/" rel="next" title="機器學習個案研究I-環境設定">
-                <i class="fa fa-chevron-left"></i> 機器學習個案研究I-環境設定
+              <a href="/2016/07/22/Note-of-Angular-2-How-to-pass-variable-between-two-components/" rel="next" title="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
+                <i class="fa fa-chevron-left"></i> [Note of Angular 2] 如何讓變數在兩個components傳遞?
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/15/firebase-hosting/" rel="prev" title="如何使用firebase hosting架設靜態網站">
-                如何使用firebase hosting架設靜態網站 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,7 +470,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#簡介"><span class="nav-number">1.</span> <span class="nav-text">簡介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#export"><span class="nav-number">1.</span> <span class="nav-text">export</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同場加映：如何將匯出的資料存成檔案？"><span class="nav-number">1.1.</span> <span class="nav-text">同場加映：如何將匯出的資料存成檔案？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">2.</span> <span class="nav-text">import</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同場加映：如何匯入date-time類別的資料？"><span class="nav-number">2.1.</span> <span class="nav-text">同場加映：如何匯入date_time類別的資料？</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
