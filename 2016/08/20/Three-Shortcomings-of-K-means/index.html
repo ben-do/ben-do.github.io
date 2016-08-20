@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="angular 2,typescript," />
+  <meta name="keywords" content="maching learning,clustering," />
 
 
 
@@ -57,46 +57,26 @@
 
 
 
-<meta name="description" content="title: ‘[Angular 2 學習筆記] 開始第一個網頁’
-
-
-首先需要安裝node.js
-clone 官方的範例
-12git clone  https://github.com/angular/quickstart  my-projcd my-proj
-
-移除git相關的檔案
-12rm -rf .git  // Mac, Linuxrd .git /S/Q // windows
-
-安裝相">
+<meta name="description" content="使用k-means分群的幾個缺點k-means是依據資料點彼此之間的距離來進行分群的，與群心越接近的資料點越會被分成同一群。但有時候資料的分群不能光看距離的，以下分別舉分個例子。
+例子A: 各群的的大小不同
+如上圖左側所示，橘、藍、綠三個群體的大小並不相同，可是如果依照距離來做分群的話，就會依照中間的三條線(Benz’ logo?)來切出三個群。從右側的圖顯然可以發現，原本屬於綠色的資料點會被錯誤">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Note of Angular 2] Getting start">
-<meta property="og:url" content="http://ben-do.github.io/2016/07/17/Note-of-Angular-2-Getting-start/index.html">
+<meta property="og:title" content="使用k-means分群的三個缺點">
+<meta property="og:url" content="http://ben-do.github.io/2016/08/20/Three-Shortcomings-of-K-means/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="title: ‘[Angular 2 學習筆記] 開始第一個網頁’
-
-
-首先需要安裝node.js
-clone 官方的範例
-12git clone  https://github.com/angular/quickstart  my-projcd my-proj
-
-移除git相關的檔案
-12rm -rf .git  // Mac, Linuxrd .git /S/Q // windows
-
-安裝相">
-<meta property="og:updated_time" content="2016-07-22T10:16:41.813Z">
+<meta property="og:description" content="使用k-means分群的幾個缺點k-means是依據資料點彼此之間的距離來進行分群的，與群心越接近的資料點越會被分成同一群。但有時候資料的分群不能光看距離的，以下分別舉分個例子。
+例子A: 各群的的大小不同
+如上圖左側所示，橘、藍、綠三個群體的大小並不相同，可是如果依照距離來做分群的話，就會依照中間的三條線(Benz’ logo?)來切出三個群。從右側的圖顯然可以發現，原本屬於綠色的資料點會被錯誤">
+<meta property="og:image" content="http://ben-do.github.io/images/ml/k-means/disparate-cluster-sizes.jpg">
+<meta property="og:image" content="http://ben-do.github.io/images/ml/k-means/overlapping-clusters.jpg">
+<meta property="og:image" content="http://ben-do.github.io/images/ml/k-means/different-shaped-clusters.jpg">
+<meta property="og:updated_time" content="2016-08-20T04:14:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Note of Angular 2] Getting start">
-<meta name="twitter:description" content="title: ‘[Angular 2 學習筆記] 開始第一個網頁’
-
-
-首先需要安裝node.js
-clone 官方的範例
-12git clone  https://github.com/angular/quickstart  my-projcd my-proj
-
-移除git相關的檔案
-12rm -rf .git  // Mac, Linuxrd .git /S/Q // windows
-
-安裝相">
+<meta name="twitter:title" content="使用k-means分群的三個缺點">
+<meta name="twitter:description" content="使用k-means分群的幾個缺點k-means是依據資料點彼此之間的距離來進行分群的，與群心越接近的資料點越會被分成同一群。但有時候資料的分群不能光看距離的，以下分別舉分個例子。
+例子A: 各群的的大小不同
+如上圖左側所示，橘、藍、綠三個群體的大小並不相同，可是如果依照距離來做分群的話，就會依照中間的三條線(Benz’ logo?)來切出三個群。從右側的圖顯然可以發現，原本屬於綠色的資料點會被錯誤">
+<meta name="twitter:image" content="http://ben-do.github.io/images/ml/k-means/disparate-cluster-sizes.jpg">
 
 
 
@@ -114,7 +94,7 @@ clone 官方的範例
   };
 </script>
 
-  <title> [Note of Angular 2] Getting start | Ben's Log </title>
+  <title> 使用k-means分群的三個缺點 | Ben's Log </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -263,7 +243,7 @@ clone 官方的範例
             
             
               
-                [Note of Angular 2] Getting start
+                使用k-means分群的三個缺點
               
             
           </h1>
@@ -275,8 +255,8 @@ clone 官方的範例
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T14:40:00+08:00" content="2016-07-17">
-              2016-07-17
+            <time itemprop="dateCreated" datetime="2016-08-20T12:09:00+08:00" content="2016-08-20">
+              2016-08-20
             </time>
           </span>
 
@@ -289,8 +269,8 @@ clone 官方的範例
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/angular-2/" itemprop="url" rel="index">
-                    <span itemprop="name">angular 2</span>
+                  <a href="/categories/maching-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">maching learning</span>
                   </a>
                 </span>
 
@@ -321,22 +301,14 @@ clone 官方的範例
       
 
       
-        <p>title: ‘[Angular 2 學習筆記] 開始第一個網頁’</p>
-<hr>
-<ol>
-<li>首先需要安裝<a href="https://nodejs.org/en/" target="_blank" rel="external"><code>node.js</code></a></li>
-<li><p>clone 官方的範例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/angular/quickstart  my-proj</span><br><span class="line">cd my-proj</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>移除git相關的檔案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git  // Mac, Linux</span><br><span class="line">rd .git /S/Q // windows</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝相關的檔案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>啟動local端的server</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></li>
-</ol>
+        <h1 id="使用k-means分群的幾個缺點"><a href="#使用k-means分群的幾個缺點" class="headerlink" title="使用k-means分群的幾個缺點"></a>使用k-means分群的幾個缺點</h1><p>k-means是依據資料點彼此之間的距離來進行分群的，與群心越接近的資料點越會被分成同一群。但有時候資料的分群不能光看距離的，以下分別舉分個例子。</p>
+<h3 id="例子A-各群的的大小不同"><a href="#例子A-各群的的大小不同" class="headerlink" title="例子A: 各群的的大小不同"></a>例子A: 各群的的大小不同</h3><p><img src="/images/ml/k-means/disparate-cluster-sizes.jpg" alt="各群的的大小不同"></p>
+<p>如上圖左側所示，<code>橘</code>、<code>藍</code>、<code>綠</code>三個群體的大小並不相同，可是如果依照距離來做分群的話，就會依照中間的三條線(Benz’ logo?)來切出三個群。從右側的圖顯然可以發現，原本屬於綠色的資料點會被錯誤分群到橘、藍兩群。</p>
+<h3 id="例子B-群與群之間有重疊"><a href="#例子B-群與群之間有重疊" class="headerlink" title="例子B: 群與群之間有重疊"></a>例子B: 群與群之間有重疊</h3><p><img src="/images/ml/k-means/overlapping-clusters.jpg" alt="群與群之間有重疊"></p>
+<p>第二個例子是重疊，如上圖左側可見，三個群體是有互相重疊(overlapping)的情況發生，我們很難判斷位於重疊區域的資料點應該會被分到哪一個群當中。可是如使用k-means做分群，那重疊的區域就會被強制分到一個群體當中(上圖右側)，可能會有錯誤分群的情況發生。</p>
+<h3 id="例子C-各群的形狀不同"><a href="#例子C-各群的形狀不同" class="headerlink" title="例子C: 各群的形狀不同"></a>例子C: 各群的形狀不同</h3><p><img src="/images/ml/k-means/different-shaped-clusters.jpg" alt="各群的形狀不同"></p>
+<p>最後一種情況就是群的形狀並非都是一致的，有些群體可以是橢圓(二維空間為例)，而且橢圓的形狀也不一致，如上圖左側。但因為k-means的分群是依照距離來計算相似度，所以會有錯誤的情狀。如上圖右側的點，他應該被分為綠色的群，可是因為距離藍色的群心比較接近，所以會被錯誤的分成藍色的群。</p>
+<p>Ref: <a href="https://www.coursera.org/learn/ml-clustering-and-retrieval/home/week/4" target="_blank" rel="external">Machine Learning: Clustering &amp; Retrieval on Coursera</a></p>
 
       
     </div>
@@ -351,9 +323,9 @@ clone 官方的範例
       
         <div class="post-tags">
           
-            <a href="/tags/angular-2/" rel="tag">#angular 2</a>
+            <a href="/tags/maching-learning/" rel="tag">#maching learning</a>
           
-            <a href="/tags/typescript/" rel="tag">#typescript</a>
+            <a href="/tags/clustering/" rel="tag">#clustering</a>
           
         </div>
       
@@ -362,17 +334,13 @@ clone 官方的範例
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/15/firebase-hosting/" rel="next" title="如何使用firebase hosting架設靜態網站">
-                <i class="fa fa-chevron-left"></i> 如何使用firebase hosting架設靜態網站
+              <a href="/2016/08/15/how-to-import-and-export-data-in-lovefield/" rel="next" title="Lovefield 的資料匯出與匯入">
+                <i class="fa fa-chevron-left"></i> Lovefield 的資料匯出與匯入
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/17/Note-of-Angular-2-Compile-to-another-folder/" rel="prev" title="[Note of Angular 2] 將js, map等檔案編譯至特定資料夾">
-                [Note of Angular 2] 將js, map等檔案編譯至特定資料夾 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,7 +459,7 @@ clone 官方的範例
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用k-means分群的幾個缺點"><span class="nav-number">1.</span> <span class="nav-text">使用k-means分群的幾個缺點</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子A-各群的的大小不同"><span class="nav-number">1.0.1.</span> <span class="nav-text">例子A: 各群的的大小不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子B-群與群之間有重疊"><span class="nav-number">1.0.2.</span> <span class="nav-text">例子B: 群與群之間有重疊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子C-各群的形狀不同"><span class="nav-number">1.0.3.</span> <span class="nav-text">例子C: 各群的形狀不同</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

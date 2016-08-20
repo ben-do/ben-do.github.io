@@ -235,6 +235,118 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/24/Case-Study-of-Machine-Learning-II-Simple-Regression/" itemprop="url">
+                  機器學習個案研究II-以回歸方程預測房價
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-03-24T01:33:00+08:00" content="2016-03-24">
+              2016-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>第二週的課程，正式進入到個案的部分。本次要探討的主題是如何預測房價？相信這是很多人都想要知道的一件事情，尤其在買賣房屋的時候。假設我們是買方，我們會想要知道這間房子大概值多少錢？它有三層樓，坪數是一百二十坪，有三間浴室，附有兩個停車位。</p>
+<p>我們使用到一個很基本的分析方法，回歸方程式。一條回歸方程式分為兩個部份：<code>自變數</code>(independed variable)與<code>應變數</code>(dependend variable)。顧名思義，<code>自變數</code>就是可以我們自己來改變它的值的數字，像是每間房子的大小、浴室數量等，這些我們也把它稱為屬性。而<code>應變數</code>指的就是會隨著自變數而跟著改變的數值，像是房子的價格會隨著坪數的大小而改變。</p>
+<p>而透過回歸的方式就是希望可以找到一條方程式，把<code>自變數</code>的值(房子的屬性)丟進去之後，就可以得到<code>應變數</code>(價錢)是多少。</p>
+<p>有了這最基本的認知之後，就可以開始使用python去做分析與預測了(詳細關於回歸方程式的介紹我在此就先不多說，有興趣可以自行翻閱相關資料，或是我有空再補充)。</p>
+<p>＃程式實作<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> graphlab</span><br><span class="line"><span class="comment"># 載入房地產的資料</span></span><br><span class="line">sales = graphlab.SFrame(<span class="string">'home_data.gl/'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接查看一下匯入的資料，共有21613筆資料，每筆資料有21個欄位</span></span><br><span class="line">sales</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將canvas的顯示目標設定在ipython notebook內</span></span><br><span class="line">graphlab.canvas.set_target(<span class="string">'ipynb'</span>) </span><br><span class="line">sales.show(view=<span class="string">"Scatter Plot"</span>, x=<span class="string">"sqft_living"</span>, y=<span class="string">"price"</span>)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/18/Case-Study-of-Machine-Learning-I-Setup-Environment/" itemprop="url">
                   機器學習個案研究I-環境設定
                 </a>
@@ -463,7 +575,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -471,7 +583,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分類</span>
               </a>
             </div>
@@ -480,7 +592,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
