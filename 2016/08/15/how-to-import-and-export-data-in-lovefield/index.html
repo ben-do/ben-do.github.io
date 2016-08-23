@@ -57,26 +57,26 @@
 
 
 
-<meta name="description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+<meta name="description" content="title: how-to-import-and-export-data-in-lovefieldtags: angular 2
 
 會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
-exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lovefield 的資料匯出與匯入">
 <meta property="og:url" content="http://ben-do.github.io/2016/08/15/how-to-import-and-export-data-in-lovefield/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+<meta property="og:description" content="title: how-to-import-and-export-data-in-lovefieldtags: angular 2
 
 會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
-exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內">
 <meta property="og:image" content="http://ben-do.github.io/images/angular2/export_db.png">
-<meta property="og:updated_time" content="2016-08-15T15:27:22.000Z">
+<meta property="og:updated_time" content="2016-08-23T04:39:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lovefield 的資料匯出與匯入">
-<meta name="twitter:description" content="title: how-to-import-and-export-data-in-lovefieldtags:
+<meta name="twitter:description" content="title: how-to-import-and-export-data-in-lovefieldtags: angular 2
 
 會使用到lovefield來開發程式，應該蠻有機會有需要用到匯出(export)與匯入(import)這兩個功能的，今天來介紹一下。
-exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個ja">
+exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內">
 <meta name="twitter:image" content="http://ben-do.github.io/images/angular2/export_db.png">
 
 
@@ -270,8 +270,8 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/angular2/" itemprop="url" rel="index">
-                    <span itemprop="name">angular2</span>
+                  <a href="/categories/angular-2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular 2</span>
                   </a>
                 </span>
 
@@ -302,7 +302,7 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
       
 
       
-        <p>title: how-to-import-and-export-data-in-lovefield<br>tags:</p>
+        <p>title: how-to-import-and-export-data-in-lovefield<br>tags: angular 2</p>
 <hr>
 <p>會使用到<code>lovefield</code>來開發程式，應該蠻有機會有需要用到匯出(<code>export</code>)與匯入(<code>import</code>)這兩個功能的，今天來介紹一下。</p>
 <h2 id="export"><a href="#export" class="headerlink" title="export"></a>export</h2><p>lovefield內建的lf.Database物件就提供了匯出與匯入這兩個功能，首先介紹匯出的部分。export會將程式內的資料庫轉為一個javascript的object。格式如下：</p>
@@ -320,7 +320,6 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">    return this.myDb.import(JSON.parse(data)).then(function () &#123;</span><br><span class="line">        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="同場加映：如何匯入date-time類別的資料？"><a href="#同場加映：如何匯入date-time類別的資料？" class="headerlink" title="同場加映：如何匯入date_time類別的資料？"></a>同場加映：如何匯入date_time類別的資料？</h3><p> 有一點需要注意，那就是如果資料表的欄位有時間日期<code>lf.Type.DATE_TIME</code>的類別，則需要先行處理，不然會產生<code>value.getTime()</code>的error。本例參考<a href="http://stackoverflow.com/questions/4511705/how-to-parse-json-to-receive-a-date-object-in-javascript" target="_blank" rel="external">stackoverflow</a>改寫了一個<code>dateTimeReviver</code>，來處理<code>yyyy-MM-ddTHH:ii:ss.fffZ</code>的格式(ex: <code>2016-07-27T15:42:22.554Z</code>)。把這個Reviver當做JSON.parse()的第二個參數即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">importDb(data: string) &#123;</span><br><span class="line"></span><br><span class="line">    var dateTimeReviver = function (key: any, value: any) &#123;</span><br><span class="line">        var a: any;</span><br><span class="line">        if (typeof value === &apos;string&apos;) &#123;</span><br><span class="line">            a = /^(\d&#123;4&#125;)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)(.\d&#123;3&#125;Z)/.exec(value);</span><br><span class="line">            if (a) &#123;</span><br><span class="line">                return new Date(value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line">    this.myDb.delete().from(this.myTable).exec().then(() =&gt; &#123;</span><br><span class="line">	    return this.myDb.import(JSON.parse(data, dateTimeReviver)).then(function () &#123;</span><br><span class="line">	        alert(&quot;成功匯入資料&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
@@ -423,7 +422,7 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -431,7 +430,7 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分類</span>
               </a>
             </div>
@@ -440,7 +439,7 @@ exportlovefield內建的lf.Database物件就提供了匯出與匯入這兩個功
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>

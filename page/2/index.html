@@ -235,6 +235,231 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/17/Note-of-Angular-2-Getting-start/" itemprop="url">
+                  [Note of Angular 2] Getting start
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-07-17T14:40:00+08:00" content="2016-07-17">
+              2016-07-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/angular-2/" itemprop="url" rel="index">
+                    <span itemprop="name">angular 2</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: ‘[Angular 2 學習筆記] 開始第一個網頁’</p>
+<hr>
+<ol>
+<li>首先需要安裝<a href="https://nodejs.org/en/" target="_blank" rel="external"><code>node.js</code></a></li>
+<li><p>clone 官方的範例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/angular/quickstart  my-proj</span><br><span class="line">cd my-proj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移除git相關的檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git  // Mac, Linux</span><br><span class="line">rd .git /S/Q // windows</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝相關的檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>啟動local端的server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/15/firebase-hosting/" itemprop="url">
+                  如何使用firebase hosting架設靜態網站
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-06-15T11:16:00+08:00" content="2016-06-15">
+              2016-06-15
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天來介紹一下firebase hosting這個服務，firbase hosting可以幫助我們直接用很簡單的方式把靜態網頁(html, js)部屬到到firebase上。<br>多簡單呢?只需要三個步驟就可以完成一個具有https加密的網站，還可以綁定自己的網址</p>
+<ol>
+<li>install</li>
+<li>init(包含 login)</li>
+<li>deploy</li>
+</ol>
+<h1 id="install"><a href="#install" class="headerlink" title="install"></a>install</h1><p>第一步需要安裝firebase-tools<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g firebase-tools</span><br></pre></td></tr></table></figure></p>
+<h1 id="init-包含-login"><a href="#init-包含-login" class="headerlink" title="init(包含 login)"></a>init(包含 login)</h1><p>第二步建立一個資料夾(demo-web)並登入firebase，在登入時它會詢問是否讓它匿名收集使用資訊，輸入Y or n選擇後會打開一個授權網頁，點選確認就完成登入了。<br><img src="/images/firebase/auth.png" alt="firebase auth"><br>另外firebase綁定gmail，請事先先去申請一個。<br>有些時候我們可能會想要另外申請一個專門for firebase的google帳號，而該帳號又不是在你常用的瀏覽器(e.g., chrome)登入的話，可以複製terminal下的那一長串網址到其他的瀏覽器(e.g., firebase, safari)來登入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir demo-web</span><br><span class="line">$ cd demo-web</span><br><span class="line">$ firebase login</span><br><span class="line">Allow Firebase to collect anonymous CLI usage information?(Y/n)</span><br><span class="line"></span><br><span class="line">https://accounts.google.com/o/oauth2/auth?xxxxxxxxxx</span><br><span class="line"></span><br><span class="line">Waiting for authentication...</span><br><span class="line"></span><br><span class="line">✔  Success! Logged in as your_firebase@gmail.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ firebase init</span><br><span class="line"></span><br><span class="line">選擇第二個選項Hosting</span><br><span class="line">What Firebase CLI features do you want to setup for this folder? </span><br><span class="line"> ◉ Database: Deploy Firebase Realtime Database Rules</span><br><span class="line">❯◉ Hosting: Configure and deploy Firebase Hosting sites</span><br><span class="line"></span><br><span class="line">輸入Database Rules的檔案名稱，可以直接按Enter使用database.rules.json</span><br><span class="line">What file should be used for Database Rules?(database.rules.json)</span><br><span class="line"></span><br><span class="line">輸入網頁檔案要放置的資料夾名稱，可以直接按Enter使用public</span><br><span class="line">What do you want to use as your public directory? (public)</span><br><span class="line"></span><br><span class="line">決定是否設定為single-page app</span><br><span class="line">Configure as a single-page app (rewrite all urls to /index.html)? </span><br><span class="line"></span><br><span class="line">如何還沒在firebase的console建立新的project的話，就選擇new</span><br><span class="line">What Firebase project do you want to associate as default?</span><br><span class="line"></span><br><span class="line">✔  Firebase initialization complete!</span><br><span class="line"></span><br><span class="line">Project creation is only available from the Firebase Console</span><br><span class="line">Please visit https://console.firebase.google.com to create a new project, then run firebase use --add</span><br></pre></td></tr></table></figure>
+<p>若沒有事先建立project，請到console建立，再透過<code>firebase use --add</code>來設定網站對應的project<br>進入<a href="https://console.firebase.google.com/" target="_blank" rel="external">console</a>點選<code>Create Project</code>建立一個新的project<br><img src="/images/firebase/create_project.png" alt="Create project"><br>建立成功之後，點選左方選單的database可以看到<code>https://fir-web-apple01.firebaseio.com/</code>類似的網址，其中的<code>fir-web-apple01</code>就是project的名稱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ firebase use --add</span><br><span class="line">? Which project do you want to add? fir-web-apple01</span><br><span class="line">? What alias do you want to use for this project? (e.g. staging) demo-web</span><br><span class="line"></span><br><span class="line">Created alias demo-web for fir-web-apple01.</span><br><span class="line">Now using alias demo-web (fir-web-apple01)</span><br></pre></td></tr></table></figure>
+<h1 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h1><p>輸入deploy就完成啦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ firebase deploy</span><br></pre></td></tr></table></figure></p>
+<p>除了第一次弄要登入，初始化等比較麻煩一些之外，之後修改完<code>public</code>內的檔案直接<code>firebase deploy</code>就可以更新網站了。<br>Enjoy it.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/24/Case-Study-of-Machine-Learning-II-Simple-Regression/" itemprop="url">
                   機器學習個案研究II-以回歸方程預測房價
                 </a>
@@ -575,7 +800,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -583,7 +808,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分類</span>
               </a>
             </div>
@@ -592,7 +817,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>

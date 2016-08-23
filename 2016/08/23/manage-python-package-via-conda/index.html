@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="angular 2,typescript," />
+  <meta name="keywords" content="python,conda," />
 
 
 
@@ -57,27 +57,28 @@
 
 
 
-<meta name="description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+<meta name="description" content="title: manage python package via conda
+tags: python
 
-情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
-檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
+使用conda來管理python的套件為什麽會用到conda而不是virtualenv呢…因為之前上machine learning的時候安裝anaconda會一次裝好大部分常用的科學套件，所以就接著用了。
+建立虛擬環境首先，需要先建立一個虛擬環境並啟動它，然後才可以安裝新的套件。注意，在建立">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
-<meta property="og:url" content="http://ben-do.github.io/2016/07/22/Note-of-Angular-2-How-to-pass-variable-between-two-components/index.html">
+<meta property="og:title" content="manage python package via conda">
+<meta property="og:url" content="http://ben-do.github.io/2016/08/23/manage-python-package-via-conda/index.html">
 <meta property="og:site_name" content="Ben's Log">
-<meta property="og:description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+<meta property="og:description" content="title: manage python package via conda
+tags: python
 
-情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
-檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
-<meta property="og:image" content="http://ben-do.github.io/images/angular2/ABcomponent.png">
-<meta property="og:updated_time" content="2016-07-22T09:55:08.482Z">
+使用conda來管理python的套件為什麽會用到conda而不是virtualenv呢…因為之前上machine learning的時候安裝anaconda會一次裝好大部分常用的科學套件，所以就接著用了。
+建立虛擬環境首先，需要先建立一個虛擬環境並啟動它，然後才可以安裝新的套件。注意，在建立">
+<meta property="og:updated_time" content="2016-08-23T04:24:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Note of Angular 2] 如何讓變數在兩個components傳遞?">
-<meta name="twitter:description" content="title: ‘[Note of Angular 2] How to pass variable between two components’
+<meta name="twitter:title" content="manage python package via conda">
+<meta name="twitter:description" content="title: manage python package via conda
+tags: python
 
-情境 I:有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。
-檔案分別有以下四個，其對應到的selector分為別&amp;lt;A-selector&amp;gt;與&amp;lt;B-">
-<meta name="twitter:image" content="http://ben-do.github.io/images/angular2/ABcomponent.png">
+使用conda來管理python的套件為什麽會用到conda而不是virtualenv呢…因為之前上machine learning的時候安裝anaconda會一次裝好大部分常用的科學套件，所以就接著用了。
+建立虛擬環境首先，需要先建立一個虛擬環境並啟動它，然後才可以安裝新的套件。注意，在建立">
 
 
 
@@ -95,7 +96,7 @@
   };
 </script>
 
-  <title> [Note of Angular 2] 如何讓變數在兩個components傳遞? | Ben's Log </title>
+  <title> manage python package via conda | Ben's Log </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -244,7 +245,7 @@
             
             
               
-                [Note of Angular 2] 如何讓變數在兩個components傳遞?
+                manage python package via conda
               
             
           </h1>
@@ -256,8 +257,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-22T16:10:00+08:00" content="2016-07-22">
-              2016-07-22
+            <time itemprop="dateCreated" datetime="2016-08-23T12:21:00+08:00" content="2016-08-23">
+              2016-08-23
             </time>
           </span>
 
@@ -270,8 +271,8 @@
               <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/angular-2/" itemprop="url" rel="index">
-                    <span itemprop="name">angular 2</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -302,75 +303,13 @@
       
 
       
-        <p>title: ‘[Note of Angular 2] How to pass variable between two components’</p>
+        <p>title: manage python package via conda</p>
+<p>tags: python</p>
 <hr>
-<h4 id="情境-I"><a href="#情境-I" class="headerlink" title="情境 I:"></a>情境 I:</h4><p>有A B兩個component，B為A的child component，想要在B component 顯示 A component的變數。</p>
-<p>檔案分別有以下四個，其對應到的selector分為別<code>&lt;A-selector&gt;</code>與<code>&lt;B-selector&gt;</code>，要傳的變數為<code>myVar</code></p>
-<ul>
-<li>AComponent.ts</li>
-<li>AComponent.html</li>
-<li>BComponent.ts</li>
-<li>BComponent.html</li>
-</ul>
-<ol>
-<li><p>在<code>AComponent.ts</code>的class中先宣告<code>myVar</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export class AComponent implements OnInit &#123;</span><br><span class="line">   	myVar: number;</span><br><span class="line">       ...</span><br><span class="line">       ...</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>AComponent.html</code>傳入變數</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;B-selector [myVar]=&quot;myVar&quot;&gt;&lt;/B-selector&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>BComponent.ts</code>中 import <code>Input</code>功能，並宣告變數，變數前面需要加上<code>@Input()</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	@Input() myVar: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接著就可以在B Component中使用該變數了</p>
-</li>
-</ol>
-<p>參考</p>
-<ul>
-<li><a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#parent-to-child" target="_blank" rel="external">Pass data from parent to child with input binding</a></li>
-</ul>
-<hr>
-<h4 id="情境-II"><a href="#情境-II" class="headerlink" title="情境 II:"></a>情境 II:</h4><p>接續上例，在B Component更動過該變數之後，想要讓A Component同時也發生變化。</p>
-<ol>
-<li><p>在<code>AComponent.ts</code>的class中先宣告一個函數來處理B component更動到<code>myVar</code>的事件</p>
- <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">   	myVar: <span class="built_in">any</span>;</span><br><span class="line">       ...</span><br><span class="line">       ...</span><br><span class="line">       onChangeVar(variable: <span class="built_in">number</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.myVar = variable;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>AComponent.html</code>中bind該事件</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">B-selector</span> [<span class="attr">myVar</span>]=<span class="string">"myVar"</span> (<span class="attr">onChangeVar</span>)=<span class="string">"onChangeVar($event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">B-selector</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>BComponent.ts</code>中 import <code>Output</code>、<code>EventEmitter</code>功能，並宣告在<code>1</code>提到的函數，變數前面需要加上<code>@Output()</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">	...</span><br><span class="line">	@Output() onChangeVar = new EventEmitter();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接著就可以在B Component中使用該函數來傳回更新過後的值</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.onChangeVar.emit(newVar);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>參考</p>
-<ul>
-<li><a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#child-to-parent" target="_blank" rel="external">Parent listens for child event</a></li>
-</ul>
-<hr>
-<h4 id="情境-III"><a href="#情境-III" class="headerlink" title="情境 III:"></a>情境 III:</h4><p>想要直接在 A Component中操作 B Component 的變數與函式</p>
-<p>理論上父元件無法讀取子元件的變數也無法使用子元件的函式，但是我們在templete中可以藉由<code>參考變數(reference variable)</code>來使用子元件的變數與函式。</p>
-<ol>
-<li><p>假設<code>BComponent.ts</code>有一個變數<code>counter</code>與兩個函式<code>add()</code>、<code>minus()</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export class BComponent implements OnInit &#123;</span><br><span class="line">   	counter: number = 0;</span><br><span class="line">       add() &#123;</span><br><span class="line">           this.counter += 1;</span><br><span class="line">       &#125;</span><br><span class="line">       minus() &#123;</span><br><span class="line">           this.counter -= 1;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>BComponent.html</code>中顯示<code>counter</code>這變數</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;counter&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> in B Component</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>現在要在<code>AComponent.html</code>中使用<code>add()</code>與<code>minus()</code>來操作<code>counter</code>，首先要在<code>&lt;B-selector&gt;</code>中加入一個<code>#</code>開頭的參考變數。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;B-selector #myCounter&gt;&lt;/B-selector&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然後就可以在透過<code>myCounter</code>來使用<code>BComponent</code>的函式與變數</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;h2&gt;&#123;&#123;myCounter.counter&#125;&#125;&lt;/h2&gt; in A Component &lt;br&gt;</span><br><span class="line"> &lt;button (click)=&quot;myCounter.add()&quot;&gt;+1&lt;/button&gt;</span><br><span class="line">&lt;button (click)=&quot;myCounter.minus()&quot;&gt;-1&lt;/button&gt;</span><br><span class="line"> &lt;B-selector #myCounter&gt;&lt;/B-selector&gt;</span><br></pre></td></tr></table></figure>
-<p> 結果如圖所示，上半段為A Component，可以使用兩個按鈕來操作B component的中變數<br> <img src="/images/angular2/ABcomponent.png" alt="after compiled"></p>
-</li>
-</ol>
-<p>參考</p>
-<ul>
-<li><a href="https://angular.io/docs/ts/latest/cookbook/component-communication.html#!#parent-to-child-local-var" target="_blank" rel="external">Parent interacts with child via local variable</a></li>
-</ul>
+<h1 id="使用conda來管理python的套件"><a href="#使用conda來管理python的套件" class="headerlink" title="使用conda來管理python的套件"></a>使用conda來管理python的套件</h1><p>為什麽會用到conda而不是virtualenv呢…因為之前上machine learning的時候安裝<code>anaconda</code>會一次裝好大部分常用的科學套件，所以就接著用了。</p>
+<h2 id="建立虛擬環境"><a href="#建立虛擬環境" class="headerlink" title="建立虛擬環境"></a>建立虛擬環境</h2><p>首先，需要先建立一個虛擬環境並啟動它，然後才可以安裝新的套件。<br>注意，在建立的時候，需要先指定一個套件，本文建立的虛擬環境名稱為<code>chatbot_env</code>，先安裝<code>flask</code>這套件。<br>此虛擬環境預設的安裝路徑位於<code>/Users/XXX/anaconda/envs/chatbot_env/</code>。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ conda create -n virtual_env_name packagename</span><br><span class="line"># example</span><br><span class="line">$ conda create -n chatbot_env flask</span><br><span class="line"></span><br><span class="line"># 啟動虛擬環境</span><br><span class="line">$ source activate chatbot_env</span><br><span class="line"></span><br><span class="line"># 安裝套件</span><br><span class="line">$ conda install requests</span><br><span class="line"></span><br><span class="line"># 後來發現有些套件是conda找不到的...可以使用pip來安裝</span><br><span class="line">$ sudo pip install python-firebase</span><br><span class="line"></span><br><span class="line"># 查看安裝了什麽套件</span><br><span class="line">$ conda list</span><br><span class="line"></span><br><span class="line"># 關閉虛擬環境</span><br><span class="line">$ source deactivate</span><br><span class="line"></span><br><span class="line"># 查看本機所以的虛擬環境(也可以看到目前所在的環境、那些環境所在的路徑)</span><br><span class="line">$ conda info -e</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -385,9 +324,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/angular-2/" rel="tag">#angular 2</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            <a href="/tags/typescript/" rel="tag">#typescript</a>
+            <a href="/tags/conda/" rel="tag">#conda</a>
           
         </div>
       
@@ -396,16 +335,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/21/Turn-String-Into-Int-with-Typescript/" rel="next" title="在typesript中將string轉為int">
-                <i class="fa fa-chevron-left"></i> 在typesript中將string轉為int
+              <a href="/2016/08/20/Three-Shortcomings-of-K-means/" rel="next" title="使用k-means分群的三個缺點">
+                <i class="fa fa-chevron-left"></i> 使用k-means分群的三個缺點
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/15/how-to-import-and-export-data-in-lovefield/" rel="prev" title="Lovefield 的資料匯出與匯入">
-                Lovefield 的資料匯出與匯入 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/23/make-others-connect-to-your-localhost-via-ngnok/" rel="prev" title="使用ngrok讓外部使用者連入localhost">
+                使用ngrok讓外部使用者連入localhost <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,7 +464,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#情境-I"><span class="nav-number">1.</span> <span class="nav-text">情境 I:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情境-II"><span class="nav-number">2.</span> <span class="nav-text">情境 II:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情境-III"><span class="nav-number">3.</span> <span class="nav-text">情境 III:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用conda來管理python的套件"><span class="nav-number">1.</span> <span class="nav-text">使用conda來管理python的套件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立虛擬環境"><span class="nav-number">1.1.</span> <span class="nav-text">建立虛擬環境</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
