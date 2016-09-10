@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ben-do.github.io/2016/09/10/Dynamically-add-multiple-condition-into-SQLAchemy-query/</loc>
+    
+    <lastmod>2016-09-10T06:12:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ben-do.github.io/2016/08/15/how-to-import-and-export-data-in-lovefield/</loc>
     
     <lastmod>2016-08-23T04:39:46.000Z</lastmod>

@@ -235,6 +235,119 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/10/Dynamically-add-multiple-condition-into-SQLAchemy-query/" itemprop="url">
+                  用SQLAchemy 動態加入多個查詢條件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-09-10T14:10:00+08:00" content="2016-09-10">
+              2016-09-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>title: Dynamically add multiple condition into SQLAchemy query<br>tags: SQLAchemy, flask, python</p>
+<hr>
+<h1 id="用SQLAchemy-動態加入多個查詢條件"><a href="#用SQLAchemy-動態加入多個查詢條件" class="headerlink" title="用SQLAchemy 動態加入多個查詢條件"></a>用SQLAchemy 動態加入多個查詢條件</h1><p>使用者輸入的查詢條件有多有少，數量不等，我們要怎麼動態的將這些查詢條件加入到我們的SQL指令當中呢？</p>
+<p>假設我們是一個餐廳的查詢系統，使用者可以透過餐廳所在<code>地點</code>, <code>開放時間</code>, <code>菜色</code>來查詢喜歡的餐廳。使用者可能會只篩選<code>地點</code>，或是同事篩選三個，產生的組合就會有六種。我們不太可能寫六個SQL指令，將來如果查詢條件變多的話那不就要寫更多？</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/10/Dynamically-add-multiple-condition-into-SQLAchemy-query/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/23/make-others-connect-to-your-localhost-via-ngnok/" itemprop="url">
                   使用ngrok讓外部使用者連入localhost
                 </a>
@@ -1287,124 +1400,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/17/Note-of-Angular-2-Compile-to-another-folder/" itemprop="url">
-                  [Note of Angular 2] 將js, map等檔案編譯至特定資料夾
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-17T17:41:00+08:00" content="2016-07-17">
-              2016-07-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/angular-2/" itemprop="url" rel="index">
-                    <span itemprop="name">angular 2</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>title: ‘[Note of Angular 2] Compile to another folder’</p>
-<hr>
-<p>用typescript寫好程式之後，一但編譯之後，會多出許多<code>XXX.js</code>, <code>XXX.map</code>的檔案，會使得未來在尋找檔案上變得非常麻煩。所以可以使用以下的方法來將那些檔案編譯至特定資料夾。</p>
-<p><img src="/images/angular2/ts-compile.jpg" alt="after compiled"></p>
-<ol>
-<li>編輯<code>systemjs.config.js</code>檔案</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;</span><br><span class="line">    &apos;app&apos;:                        &apos;dist/app&apos;, // 更改此行,</span><br><span class="line"></span><br><span class="line">    &apos;@angular&apos;:                   &apos;node_modules/@angular&apos;,</span><br><span class="line">    &apos;angular2-in-memory-web-api&apos;: &apos;node_modules/angular2-in-memory-web-api&apos;,</span><br><span class="line">    &apos;rxjs&apos;:                       &apos;node_modules/rxjs&apos;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-<p>2.<br>編輯<code>tsconfig.json</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &quot;target&quot;: &quot;es5&quot;,</span><br><span class="line">    &quot;module&quot;: &quot;commonjs&quot;,</span><br><span class="line">    &quot;moduleResolution&quot;: &quot;node&quot;,</span><br><span class="line">    &quot;sourceMap&quot;: true,</span><br><span class="line">    &quot;emitDecoratorMetadata&quot;: true,</span><br><span class="line">    &quot;experimentalDecorators&quot;: true,</span><br><span class="line">    &quot;removeComments&quot;: false,</span><br><span class="line">    &quot;noImplicitAny&quot;: true,</span><br><span class="line">    &quot;suppressImplicitAnyIndexErrors&quot;: true,</span><br><span class="line">    &quot;outDir&quot;: &quot;dist&quot; //新增此行</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>把原本<code>/app</code>內的js, map等檔案刪除，重新<code>npm tsc</code>編譯一次就會發現那些檔案都移動到<code>/dist/app</code>資料夾內了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1450,7 +1445,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1467,7 +1462,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
