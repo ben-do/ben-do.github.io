@@ -235,6 +235,197 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/21/Turn-String-Into-Int-with-Typescript/" itemprop="url">
+                  在typesript中將string轉為int
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-07-21T11:32:00+08:00" content="2016-07-21">
+              2016-07-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: Turn String Into Int with Typescript</p>
+<hr>
+<p>最近用到PirmeNG的datatable來編輯資料，可是有個問題就是編輯過後的數值會從int變成string，導致後來做加減乘除的運算上會出現問題，所以必須要轉回int。</p>
+<p>下面要針對records中的amount進行加總</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for( var r of this.records) &#123;</span><br><span class="line">    this.columnSum.amount += r.amount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因為r.amount被轉為string了，原本想透過<code>parseInt</code>轉回來，可以在typescript中我把amount宣告為number，所以無法使用parseInt這個function。但是可以透過<code>+</code>這符號來轉換為數值。</p>
+<p>```<br>for( var r of this.records) {<br>    this.columnSum.amount += +r.amount;<br>}</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/21/Git-basic-usage/" itemprop="url">
+                  Git 基礎用法: Branch, merge
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-07-21T11:29:00+08:00" content="2016-07-21">
+              2016-07-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: Git basic usage</p>
+<hr>
+<h2 id="開新的分支"><a href="#開新的分支" class="headerlink" title="開新的分支"></a>開新的分支</h2><p><code>git checkout -b new_branch_name</code>: 新增一個分支，等同於<br><code>git branch new_branch_name</code> + <code>git checkout new_branch_name</code></p>
+<h2 id="合併"><a href="#合併" class="headerlink" title="合併"></a>合併</h2><p>當new_branch開發完成之後，要合併到master當中。<br><code>git checkout master</code>: 切換回主幹</p>
+<p><code>git merge new_branch</code>: 合併至主幹</p>
+<p><code>git push</code>： 推送至遠端倉庫</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>git branch</code>: 顯示目前的分支</p>
+<p><code>git checkout branch_name</code>: 換到指定的branch</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/18/Note-of-Angular-2-Using-Lovefield-in-Angular-2/" itemprop="url">
                   [Note of Angular 2] 在 Angular 2 中使用 Lovefield
                 </a>
@@ -1157,7 +1348,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1174,7 +1365,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>

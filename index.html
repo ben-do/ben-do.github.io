@@ -235,6 +235,271 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/22/how-to-install-pymssql-on-mac/" itemprop="url">
+                  如何在Mac上安裝pymssql
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T16:25:00+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: how to install pymssql on mac</p>
+<h2 id="tags-python-mac"><a href="#tags-python-mac" class="headerlink" title="tags: python, mac"></a>tags: python, mac</h2><p>首先需要先安裝FreeTDS，什麽是FreeTDS呢？簡單來說就是讓Unix, or Linux系統可以與MS SQL溝通的一個函式庫。</p>
+<ol>
+<li><code>brew install freetds</code>: 利用homebrew來安裝</li>
+<li>｀pip install pymssql`: 再來使用pip安裝即可。</li>
+</ol>
+<p>沒了，簡單記錄一下。原本直接安裝的時候會出現<code>fatal error: &#39;sqlfront.h&#39; file not found</code>的錯誤。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/22/Bayes-Rule-Example/" itemprop="url">
+                  貝氏定理應用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-10-22T16:20:00+08:00" content="2016-10-22">
+              2016-10-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: “Bayes’ Rule Example”<br>tags: 貝氏定理, machine learning</p>
+<hr>
+<h1 id="貝氏定理應用"><a href="#貝氏定理應用" class="headerlink" title="貝氏定理應用"></a>貝氏定理應用</h1><p>透過檢驗HIV的範例來了解貝氏定理的應用。</p>
+<p>首先我們知道用ELISA檢驗HIV的機率分別為</p>
+<ul>
+<li>True Positive, P(+ | has HIV): <code>0.93</code></li>
+<li>True Negative, P(- | no HIV): <code>0.99</code></li>
+</ul>
+<p>同時也知道得到HIV的機率為</p>
+<ul>
+<li>P(HIV): 0.00148</li>
+</ul>
+<p>想要知道檢驗結果為＋的情況下，也的確有HIV的機率為多少，即<code>P(has HIV | +)</code>。</p>
+<ul>
+<li>P(HIV) = 0.00148<ul>
+<li>P(+ | HIV) = 0.93</li>
+<li>P(- | HIV) = 0.07</li>
+</ul>
+</li>
+<li>P(no HIV) = 0.99852<ul>
+<li>P(+ | no HIV) = 0.01</li>
+<li>P(- | no HIV) = 0.99</li>
+</ul>
+</li>
+</ul>
+<p>套用貝氏定理<code>P(B|A) = P(A, B) / P(A)</code>，也就是</p>
+<ul>
+<li><p>P(HIV | + ) = P(HIV, +) / P(+)</p>
+</li>
+<li><p>P(HIV, +) 表示兩者同時發生的機率，0.00148 * 0.093 = <code>0.0013764</code></p>
+</li>
+<li>P(+) 就是所有檢驗出來為＋的機率，包含有ＨＩＶ檢驗出為＋的<code>0.0013764</code>與沒有ＨＩＶ卻檢驗出為＋的0.99852*0.01 = <code>0.0099852</code>，故P(+)為<code>0.0013764</code>+<code>0.0099852</code> = <code>0.0113616</code></li>
+<li>P(HIV | + ) = 0.0013764 / 0.0113616 = 0.12</li>
+</ul>
+<p>所以透過ELISA檢驗為＋的情況下，實際得到HIV的機率也只有<code>0.12</code>。</p>
+<p>這時候，如果有人被檢驗出為＋，去檢查第二次又是＋，那他實際得到HIV的機率會變多少呢？因為是檢驗第二次了，我們已經得知他的</p>
+<ul>
+<li>P(has HIV) = 0.12</li>
+<li>P(no HIV) = 0.88</li>
+<li>P(HIV, +) = 0.12 * 0.93 = 0.1116</li>
+<li>P(+) = 0.12 <em> 0.093 + 0.88 </em> 0.01 = 0.1204</li>
+<li>P(HIV | + ) = 0.1116 / 0.1204 = 0.93 </li>
+</ul>
+<p>如果兩次檢驗都是＋，就比較中獎機率高達93%，如果三次都是＋的話…</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/15/how-to-use-slice-in-python/" itemprop="url">
                   Python當中的slice用法
                 </a>
@@ -1223,197 +1488,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/21/Turn-String-Into-Int-with-Typescript/" itemprop="url">
-                  在typesript中將string轉為int
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T11:32:00+08:00" content="2016-07-21">
-              2016-07-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>title: Turn String Into Int with Typescript</p>
-<hr>
-<p>最近用到PirmeNG的datatable來編輯資料，可是有個問題就是編輯過後的數值會從int變成string，導致後來做加減乘除的運算上會出現問題，所以必須要轉回int。</p>
-<p>下面要針對records中的amount進行加總</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for( var r of this.records) &#123;</span><br><span class="line">    this.columnSum.amount += r.amount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>因為r.amount被轉為string了，原本想透過<code>parseInt</code>轉回來，可以在typescript中我把amount宣告為number，所以無法使用parseInt這個function。但是可以透過<code>+</code>這符號來轉換為數值。</p>
-<p>```<br>for( var r of this.records) {<br>    this.columnSum.amount += +r.amount;<br>}</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/21/Git-basic-usage/" itemprop="url">
-                  Git 基礎用法: Branch, merge
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T11:29:00+08:00" content="2016-07-21">
-              2016-07-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>title: Git basic usage</p>
-<hr>
-<h2 id="開新的分支"><a href="#開新的分支" class="headerlink" title="開新的分支"></a>開新的分支</h2><p><code>git checkout -b new_branch_name</code>: 新增一個分支，等同於<br><code>git branch new_branch_name</code> + <code>git checkout new_branch_name</code></p>
-<h2 id="合併"><a href="#合併" class="headerlink" title="合併"></a>合併</h2><p>當new_branch開發完成之後，要合併到master當中。<br><code>git checkout master</code>: 切換回主幹</p>
-<p><code>git merge new_branch</code>: 合併至主幹</p>
-<p><code>git push</code>： 推送至遠端倉庫</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><code>git branch</code>: 顯示目前的分支</p>
-<p><code>git checkout branch_name</code>: 換到指定的branch</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1459,7 +1533,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1476,7 +1550,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
